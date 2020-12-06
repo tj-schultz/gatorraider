@@ -24,70 +24,8 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>_Game.LEFT</find>
-      <find>addP</find>
-      <find>Game.LEFT</find>
-      <find>getActions</find>
-      <find>maze</find>
-      <find>pills</find>
-      <find>CURmaze</find>
-      <find>totLel</find>
-      <find>state</find>
-      <find>getLeve</find>
-      <find>totalTime</find>
-      <find>adva</find>
-      <find>checkLev</find>
-      <find>reset</find>
-      <find>getTarget</find>
-      <find>LAIR_TIME</find>
-      <find>DELAY</find>
-      <find>Random</find>
-      <find>random</find>
-      <find>Ran`</find>
-      <find>png</find>
-      <find>printWr</find>
-      <find>Devastator</find>
-      <find>SeekPill</find>
-      <find>newState</find>
-      <find>update</find>
-      <find>getPillList</find>
-      <find>writer</find>
-      <find>Exec.</find>
-      <find>rng</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>.getX()</replace>
-      <replace>.getXY()</replace>
-      <replace>getY()</replace>
-      <replace>.getNumNeighbors()</replace>
-      <replace>.getPillIndex()</replace>
-      <replace>.getPowerPillIndex()</replace>
-      <replace>entry</replace>
-      <replace>hero</replace>
-      <replace>the hero</replace>
-      <replace>enemies</replace>
-      <replace>enemy</replace>
-      <replace>Game.Direction</replace>
-      <replace>Game.Direction.UP</replace>
-      <replace>Game.Direction.LEFT</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\Repositories\gatorraider\System\game\system</dir>
-      <dir>C:\Repositories\gatorraider</dir>
-      <dir>C:\Repositories\gatorraider\src</dir>
-      <dir>C:\Repositories\gatorraider\System</dir>
-    </dirStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -129,7 +67,7 @@
       <recent name="C:\Users\Jeremiah Blanchard\Repositories\Pakku-Pakku\System\game\core" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Human - Visual">
+  <component name="RunManager" selected="Application.TestAgent - Visual">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -443,6 +381,7 @@
       <item itemvalue="Application.TestAgent - Visual" />
     </list>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -528,14 +467,12 @@
       <workItem from="1521601882505" duration="1222000" />
       <workItem from="1521844206290" duration="9869000" />
       <workItem from="1521911518709" duration="618000" />
+      <workItem from="1607282546756" duration="6281000" />
     </task>
     <servers />
   </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175189000" />
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -546,30 +483,38 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1203" height="196" key="GridCell.Tab.0.bottom" timestamp="1607233830402">
-      <screen x="35" y="22" width="1245" height="778" />
+    <state width="1151" height="279" key="GridCell.Tab.0.bottom" timestamp="1607292984588">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1151" height="279" key="GridCell.Tab.0.bottom/1920.-387.900.1570/0.0.1920.1050@0.0.1920.1050" timestamp="1607292984588" />
     <state width="1203" height="196" key="GridCell.Tab.0.bottom/35.22.1245.778@35.22.1245.778" timestamp="1607233830402" />
     <state width="1202" height="198" key="GridCell.Tab.0.bottom/36.22.1244.778@36.22.1244.778" timestamp="1606975476118" />
     <state width="1202" height="198" key="GridCell.Tab.0.bottom/37.22.1243.778@37.22.1243.778" timestamp="1606975553939" />
-    <state width="1203" height="196" key="GridCell.Tab.0.center" timestamp="1607233830401">
-      <screen x="35" y="22" width="1245" height="778" />
+    <state width="1151" height="279" key="GridCell.Tab.0.center" timestamp="1607292984588">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1151" height="279" key="GridCell.Tab.0.center/1920.-387.900.1570/0.0.1920.1050@0.0.1920.1050" timestamp="1607292984588" />
     <state width="1203" height="196" key="GridCell.Tab.0.center/35.22.1245.778@35.22.1245.778" timestamp="1607233830401" />
     <state width="1202" height="198" key="GridCell.Tab.0.center/36.22.1244.778@36.22.1244.778" timestamp="1606975476117" />
     <state width="1202" height="198" key="GridCell.Tab.0.center/37.22.1243.778@37.22.1243.778" timestamp="1606975553938" />
-    <state width="1203" height="196" key="GridCell.Tab.0.left" timestamp="1607233830401">
-      <screen x="35" y="22" width="1245" height="778" />
+    <state width="1151" height="279" key="GridCell.Tab.0.left" timestamp="1607292984588">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1151" height="279" key="GridCell.Tab.0.left/1920.-387.900.1570/0.0.1920.1050@0.0.1920.1050" timestamp="1607292984588" />
     <state width="1203" height="196" key="GridCell.Tab.0.left/35.22.1245.778@35.22.1245.778" timestamp="1607233830401" />
     <state width="1202" height="198" key="GridCell.Tab.0.left/36.22.1244.778@36.22.1244.778" timestamp="1606975476117" />
     <state width="1202" height="198" key="GridCell.Tab.0.left/37.22.1243.778@37.22.1243.778" timestamp="1606975553938" />
-    <state width="1203" height="196" key="GridCell.Tab.0.right" timestamp="1607233830401">
-      <screen x="35" y="22" width="1245" height="778" />
+    <state width="1151" height="279" key="GridCell.Tab.0.right" timestamp="1607292984588">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1151" height="279" key="GridCell.Tab.0.right/1920.-387.900.1570/0.0.1920.1050@0.0.1920.1050" timestamp="1607292984588" />
     <state width="1203" height="196" key="GridCell.Tab.0.right/35.22.1245.778@35.22.1245.778" timestamp="1607233830401" />
     <state width="1202" height="198" key="GridCell.Tab.0.right/36.22.1244.778@36.22.1244.778" timestamp="1606975476118" />
     <state width="1202" height="198" key="GridCell.Tab.0.right/37.22.1243.778@37.22.1243.778" timestamp="1606975553939" />
+    <state x="306" y="261" width="585" height="534" key="find.popup" timestamp="1607289118826">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="306" y="261" width="585" height="534" key="find.popup/1920.-387.900.1570/0.0.1920.1050@0.0.1920.1050" timestamp="1607289118826" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

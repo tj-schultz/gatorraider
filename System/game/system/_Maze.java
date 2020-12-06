@@ -12,7 +12,7 @@ import game.models.Defender;
 import game.models.Node;
 import game.models.Maze;
 
-public final class _Maze implements Maze
+public final class  _Maze implements Maze
 {
     public int getNumberPills() { return pillNodes.length; }
     public int getNumberPowerPills() { return powerPillNodes.length; }
