@@ -12,7 +12,7 @@ public final class StudentAttackerController implements AttackerController
 {
 	private static int dangerDepth; // dangerous distance to nearest non-vulnerable defender
 
-	private static int safetyDepth;	// safe distance from nearest defender to pellet collect
+	private static int safetyDepth;	// safe distance from nearest non-vulnerable defender to pellet collect
 
 	private enum AttackerStates {	// states of the attacker
 			RUN,
@@ -21,7 +21,7 @@ public final class StudentAttackerController implements AttackerController
 		POPPING_PILLS,
 		NULLSTATE
 	}
-	
+
 
 	public void init(Game game) {
 
