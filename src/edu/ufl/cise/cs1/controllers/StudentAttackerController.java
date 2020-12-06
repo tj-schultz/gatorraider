@@ -10,9 +10,9 @@ import java.util.List;
 
 public final class StudentAttackerController implements AttackerController
 {
-	private static int dangerDepth; // dangerous distance to nearest non-vulnerable defender
+	private static int dangerDepth; // dangerous node distance to nearest non-vulnerable defender
 
-	private static int safetyDepth;	// safe distance from nearest non-vulnerable defender to pellet collect
+	private static int safetyDepth;	// safe node distance from nearest non-vulnerable defender to pellet collect
 
 	private enum AttackerStates {	// states of the attacker
 			RUN,
@@ -22,6 +22,8 @@ public final class StudentAttackerController implements AttackerController
 		NULLSTATE
 	}
 
+	// state of attacker
+	private AttackerStates currentState;
 
 	public void init(Game game) {
 
@@ -29,6 +31,8 @@ public final class StudentAttackerController implements AttackerController
 		dangerDepth = 4;
 		safetyDepth = 20;
 
+		// initalize state -- get pills
+		currentState = AttackerStates.POPPING_PILLS;
 	}
 
 	public void shutdown(Game game) { }
@@ -37,6 +41,7 @@ public final class StudentAttackerController implements AttackerController
 	{
 		int action = Game.Direction.EMPTY;
 
+		// get the position and check state
 		/*
 		List<Integer> possibleDirs = game.getAttacker().getPossibleDirs(true);
 		if (possibleDirs.size() != 0)
