@@ -10,17 +10,24 @@ import java.util.List;
 
 public final class StudentAttackerController implements AttackerController
 {
-	private static int pelletPathDepth;
-	// depth of a given path to compare remaining pellets
+	private static int dangerDepth; // dangerous distance to nearest non-vulnerable defender
 
-	private static float idealPelletRatio;	// describes the decisive ratio of
-	// (num pellets in palletPathDepth) / (remaining pellets)
+	private static int safetyDepth;	// safe distance from nearest defender to pellet collect
+
+	private enum AttackerStates {	// states of the attacker
+			RUN,
+		SEEK_POWER,
+		HUNT,
+		POPPING_PILLS,
+		NULLSTATE
+	}
+	
 
 	public void init(Game game) {
 
 		// initialize game behavior parameters
-		pelletPathDepth = 7;
-		idealPelletRatio = 0.15f;
+		dangerDepth = 4;
+		safetyDepth = 20;
 
 	}
 
@@ -46,6 +53,7 @@ public final class StudentAttackerController implements AttackerController
 
 		// code to win as gator
 		List<Integer> possibleDirs = game.getAttacker().getPossibleDirs(true);
+		/*
 		for (int i = 0; i < possibleDirs.size(); i++) {
 			if (possibleDirs.get(i) == Game.Direction.LEFT) {
 				action = Game.Direction.DOWN;
@@ -55,6 +63,9 @@ public final class StudentAttackerController implements AttackerController
 				action = Game.Direction.LEFT;
 			}
 		}
+		*/
+
+		// EMPLOY FUZZY LOGIC
 
 
 
