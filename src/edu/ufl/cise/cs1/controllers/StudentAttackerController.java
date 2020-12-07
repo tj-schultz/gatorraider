@@ -14,14 +14,8 @@ public final class StudentAttackerController implements AttackerController
 {
 	private static int dangerDepth; // dangerous node distance to nearest non-vulnerable defender
 
-	private static int safetyDepth;	// safe node distance from nearest non-vulnerable defender to pellet collect
-
-	private static int runs;	// runs of update (used in determining direction)
-
 	private enum AttackerStates {	// states of the attacker
 			RUN,	// flee the defenders until out of danger range
-			STROLL,
-		SEEK_POWER,	// seek a power pill
 		HUNT,		// hunt the defenders
 		POPPING_PILLS,	// prioritize paths with pills
 	}
@@ -30,7 +24,6 @@ public final class StudentAttackerController implements AttackerController
 
 	private boolean towards;	// target direction boolean
 
-	private boolean requiresAction;	// reached a junction, need to make new decision boolean
 
 	// state of attacker
 	private AttackerStates currentState;
@@ -39,18 +32,16 @@ public final class StudentAttackerController implements AttackerController
 
 		// initialize game behavior parameters
 		dangerDepth = 10;
-		safetyDepth = 30;
 
 		// begin game variables
 		towards = true;
-		requiresAction = false;
 
 		// initalize state -- get pills
 		currentState = AttackerStates.POPPING_PILLS;
 	}
 
 
-	// seeks the next node
+	// seeks the next pill node if in the POPPING_PILLS state
 	private Node targetPill(Game game, Node previousTarget) {
 		if (game.getAttacker().getNextDir(game.getAttacker().getTargetNode(game.getCurMaze().getPillNodes(), true), true)
 		 == game.getAttacker().getReverse() && !game.checkPill(game.getAttacker().
@@ -112,7 +103,7 @@ public final class StudentAttackerController implements AttackerController
 		return temp.size() > 0 ? game.getAttacker().getTargetActor(temp, true) : null;
 	}
 
-	// overloaded function for reduced lists outside of game
+	// overloaded function for reduced lists outside of game class
 	private Actor targetDangerous(List<Defender> def, Attacker att) {
 		boolean clean = false;
 		List<Defender> temp = def;
@@ -137,25 +128,6 @@ public final class StudentAttackerController implements AttackerController
 		return temp.size() > 0 ? att.getTargetActor(temp, true) : null;
 	}
 
-	// tell the program if there are more than one defenders trying to box the attacker in
-	// avoid edges for higher chance of escape
-	private boolean avoidEdges(Game game) {
-		double temp = game.getAttacker().getLocation().getPathDistance(targetDangerous(game).getLocation());
-
-		List<Defender> tempList = game.getDefenders();
-		tempList.remove(targetDangerous(game));	// remove the most dangerous target
-
-		// make temp a ratio
-		temp = temp / game.getAttacker().getLocation().getPathDistance(targetDangerous(tempList, game.getAttacker()).getLocation());
-
-		if (temp < 1.3 || temp > 0.7) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
-
 	public void shutdown(Game game) { }
 
 
@@ -164,11 +136,10 @@ public final class StudentAttackerController implements AttackerController
 	{
 		int action = Game.Direction.EMPTY; // assume the action is empty
 		List<Integer> possibleDirs = game.getAttacker().getPossibleDirs(true);
-		Node vulnerable;
-		Node dangerous;
 
 		// determine the state
 
+		// if there is a vulnerable attacker, hunt it, else collect pills
 		if (targetVulnerable(game) != null){
 			currentState = AttackerStates.HUNT;
 		}
@@ -176,42 +147,45 @@ public final class StudentAttackerController implements AttackerController
 			currentState = AttackerStates.POPPING_PILLS;
 		}
 
+		// if there is a non-vulnerable defender in the maze
 		if (targetDangerous(game) != null) {
 			if (game.getAttacker().getLocation().getPathDistance(targetDangerous(game).getLocation()) == 0) {
 				currentState = AttackerStates.POPPING_PILLS;
 			}
+
+			// if the threat of a defender is close enough to change state
 			if (game.getLevelTime() > 50 &&
 					game.getAttacker().getLocation().getPathDistance(targetDangerous(game).getLocation()) < dangerDepth){
 				currentState = AttackerStates.RUN;}
 		}
 
-		// change an action due to a change in state
-		System.out.println(currentState);
-
+		// determine a target node and directional preference from the state
 		switch (currentState) {
 			case POPPING_PILLS:
 				towards = true;
+
+				// if the direction exists
 				if (game.getAttacker().getLocation().getNeighbor(game.getAttacker().getDirection()) != null) {
 					target = targetPill(game, game.getAttacker().getLocation().getNeighbor(game.getAttacker().getDirection()));
 				}
 				else {
 					target = targetPill(game, game.getAttacker().getLocation().
 							getNeighbor(game.getAttacker().getPossibleDirs(false).get(0)));
+							// use a default movement
 				}
 				break;
-			case RUN:
+			case RUN:	// move anti to the defenders
 				towards = false;
 				target = targetDangerous(game).getLocation();
 				break;
-			case HUNT:
+			case HUNT:	// go for the vulnerable defenders
 				towards = true;
 				target = targetVulnerable(game).getLocation();
 				break;
-			default: //REMOVE
-				break;
-
 
 		}
+
+		// return action from the target node and directional preference
 		action = game.getAttacker().getNextDir(target, towards);
 
 		return action;
