@@ -31,7 +31,7 @@ public final class StudentAttackerController implements AttackerController
 	public void init(Game game) {
 
 		// initialize game behavior parameters
-		dangerDepth = 10;
+		dangerDepth = 5;//5 is magic
 
 		// begin game variables
 		towards = true;
